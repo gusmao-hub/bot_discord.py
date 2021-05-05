@@ -11,5 +11,7 @@ Implementações:
 
 Documentação Discord.py:
 https://discordpy.readthedocs.io/en/latest/index.html
-O projeto é básico para aprendizado de utilização de API externa com um server que contenha text/voIP.
+
+
+• O projeto é básico para aprendizado de utilização de API externa com um server que contenha text/voIP.
 
