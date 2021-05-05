@@ -15,14 +15,14 @@ bot = commands.Bot(command_prefix="!", help_command=None)
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name='Test bot.py'))
+    await client.change_presence(activity=discord.Game(name='Bip, Bop i am a Bot :)'))
     print('I am alive.')
 
 @client.event
 async def on_member_join(member):
     servidor = client.get_guild(839270176264159233)
     canal = guild.get_channel(839526474955882507)
-    await canal.send(f'Funcionou por favor.{member.mention}')
+    await canal.send(f'Testando...{member.mention}')
 
 @client.event
 async def on_member_remove(member):
