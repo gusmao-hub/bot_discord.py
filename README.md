@@ -3,7 +3,7 @@ Projeto para aplicação da API Discord.py
 
 Implementações:
 - [x] Mensagem de Join/Leave no server do discord.
-- [ ] Auto-Cargo
+- [ ] Auto-Role
 - [ ] Criação de !comandos
 - [ ] !comandos responsivos ao usuario
 - [ ] Função: !play/!pause/!skip
