@@ -2,7 +2,6 @@ from discord.ext import commands, tasks
 from TOKEN import token_oculto
 import os
 import discord
-import asyncio
 import random
 
 ##################################################################################################################################################################################################################################################################################################################################################################
@@ -17,14 +16,18 @@ bot = commands.Bot(command_prefix="!", help_command=None)
 
 @client.event
 async def on_ready():
-    print('I am alive.')
+    print('O pai ta ON!')
 
 
 @client.event
-async def on_member_join(members):
-    await client.get_channel(839576746293723141)
-    print(f'Teste{members.mention}')
+async def on_member_join(member):
+    await client.get_channel('839576746293723141')
+    print(f'Teste')
 
+@client.event
+async def on_member_remove(members):
+    await client.get_channel('839576746293723141')
+    print(f'Teste')
 
 @bot.command()
 async def teste(ctx):
