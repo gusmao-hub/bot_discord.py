@@ -1,4 +1,5 @@
 from discord.ext import commands, tasks
+from discord import Intents
 from TOKEN import token_oculto
 import os
 import discord
@@ -7,27 +8,24 @@ import random
 ##################################################################################################################################################################################################################################################################################################################################################################
 
 token = token_oculto
+#intents = discord.Intents.default()
 intents = discord.Intents.default()
 intents.members = True
-client = discord.Client(intents=intents)
-bot = commands.Bot(command_prefix="!", help_command=None)
+bot = commands.Bot(command_prefix="!", help_command=None, intents=intents)
 
 ##################################################################################################################################################################################################################################################################################################################################################################
 
-@client.event
+@bot.event
 async def on_ready():
     print('O pai ta ON!')
 
-
-@client.event
+@bot.event
 async def on_member_join(member):
-    await client.get_channel('839576746293723141')
-    print(f'Teste')
+    await bot.get_channel(839576746293723141).send(f'Seja bem vindo ao servidor seu corno {member.mention}!')
 
-@client.event
-async def on_member_remove(members):
-    await client.get_channel('839576746293723141')
-    print(f'Teste')
+@bot.event
+async def on_member_remove(member):
+    await bot.get_channel(839576746293723141).send(f'VLWWWW, FLWWWWWWWWW {member.mention}')
 
 @bot.command()
 async def teste(ctx):
