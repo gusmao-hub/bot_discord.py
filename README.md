@@ -1,7 +1,7 @@
 # bot_discord.py
 Projeto para aplicação da API Discord.py
 
-É necessário o TOKEN que pode ser gerado no toolkit do discord, tanto a main/TOKEN são necessárias na mesma pagina, todos os códigos são comentados para facilitar a leitura e se necessário replicar e implementar novos comandos.
+É necessário o TOKEN que pode ser gerado no toolkit do discord, tanto a main/TOKEN são necessárias na mesma pasta para funcionamento, todos os códigos são comentados para facilitar a leitura e se necessário replicar e implementar novos comandos.
 
 
 Implementações:
