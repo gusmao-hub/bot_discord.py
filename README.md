@@ -3,10 +3,11 @@ Projeto para aplicação da API Discord.py
 
 Implementações:
 - ✔️ Mensagem de Join/Leave no server do discord.
-- ✔️ Auto-Role
-- ✔️ Criação de !comandos
-- [ ] Comandos responsivos para os usuarios
+- ✔️ Auto-Role.
+- ✔️ Criação de !comandos.
+- [ ] Comandos responsivos para os usuarios.
 - [ ] Função de bot musical.
+- [ ] Hospedagem do Bot para uso externo.
 - [ ] Sugestões?
 
 
