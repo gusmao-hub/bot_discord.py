@@ -50,12 +50,12 @@ async def teste2(ctx): #async é o metodo a ser chamado esperando o contexto
 
 @client.event
 async def on_raw_reaction_add(payload):
-    msg_fixada = payload.message_id     #atribuindo o payload a mensagem fixada
-    if msg_fixada == 841389681408737301:   #atribuindo o ID da msg marcada
+    msg_fixada = payload.message_id    #atribuindo o payload a mensagem fixada
+    if msg_fixada == 841389681408737301:    #atribuindo o ID da msg marcada
         guild_id = payload.guild_id    #variavel marcando guild_id -> payload.guild_id
-        guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)   #variavel marcando guild -> usando lambda func com guild_id/client.guild
-        member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)  #variavel marcando member -> usando lambda func com payload.user_id/guild.member
-        emoji = payload.emoji.name  #variavel usando emoji react em cima -> usando o payload
+        guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)    #variavel marcando guild -> usando lambda func com guild_id/client.guild
+        member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)    #variavel marcando member -> usando lambda func com payload.user_id/guild.member
+        emoji = payload.emoji.name    #variavel usando emoji react em cima -> usando o payload
 
         if emoji == '1️⃣':
             role = discord.utils.get(guild.roles, name= 'cargo1')
