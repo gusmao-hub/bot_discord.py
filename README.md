@@ -5,9 +5,9 @@ Implementações:
 - ✔️ Mensagem de Join/Leave no server do discord.
 - ✔️ Auto-Role
 - ✔️ Criação de !comandos
-- [ ] !comandos responsivos ao usuario
-- [ ] Função: !play/!pause/!skip
-- [ ] ...a se pensar
+- [ ] Comandos responsivos para os usuarios
+- [ ] Função de bot musical.
+- [ ] Sugestões?
 
 
 Documentação Discord.py:
