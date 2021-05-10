@@ -10,7 +10,6 @@ intents = discord.Intents.default()
 intents.members = True
 client = commands.Bot(command_prefix="!", help_command=None, intents=intents)
 
-
 async def on_ready(): 
     print(f'{client.user.name} [ON SERVER]')
     print(f'Server ID - [{client.user.id}]')
@@ -18,7 +17,6 @@ async def on_ready():
     #função async - on_ready (mostra no console se o bot está ONLINE)
     #parametros usados para mostrar o nome do bot
     #parametros usados para mostrar o ID server
-
 
 @client.event #trigger comunicação Discord X Bot
 async def on_member_join(member): 
