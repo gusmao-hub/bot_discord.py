@@ -1,6 +1,9 @@
 # bot_discord.py
 Projeto para aplicação da API Discord.py
 
+É necessário o TOKEN que pode ser gerado no tolkit do discord, tanto a main/TOKEN são necessárias na mesma pagina, todos os códigos são comentados para facilitar a leitura e se necessário replicar e implementar novos comandos.
+
+
 Implementações:
 - ✔️ Mensagem de Join/Leave no server do discord.
 - ✔️ Auto-Role.
