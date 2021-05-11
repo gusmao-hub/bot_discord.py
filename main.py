@@ -62,8 +62,6 @@ async def on_raw_reaction_add(payload):
             role = discord.utils.get(guild.roles, name= 'cargo2') #VAR role aplicando os metodos do discord.utils.get(parametros de guild.role, name = nome do cargo)
             await member.add_roles(role) #Await vai adicionar o membro na role de reação [2]
 
-# variaveis acima para definir roles
-
 #################################################################################################################################################################################
 #################################################################### - [ Lista de Comandos abaixo] - ############################################################################
 #################################################################################################################################################################################
