@@ -1,9 +1,10 @@
 from discord.ext import commands, tasks
-from discord import Intents
+from discord import Intents, colour
 from TOKEN import token_oculto
-import os
+import aiohttp
 import discord
 import random
+import os
 
 token = token_oculto
 intents = discord.Intents.default()
@@ -20,7 +21,7 @@ async def on_ready():
 
 @client.event #trigger comunicação Discord X Bot
 async def on_member_join(member): 
-    await client.get_channel(839576746293723141).send(f'Bem Vindo {member.mention}!') 
+    await client.get_channel(839576746293723141).send(f'https://pbs.twimg.com/media/COfmjiqWsAQYk1f.jpg') 
 
     #função async - on_member_join (mostra uma mensagem de boas vindas para o usario recebendo o parametro do decorator)
     #await é a resposta que o async solicita neste caso apontando para o canal dando get_channel + ID, usando o parametro de membro como mensagem a ser enviada + usuario
@@ -36,8 +37,8 @@ async def on_member_remove(member):
 async def teste2(ctx): #async é o metodo a ser chamado esperando o contexto
     embed = discord.Embed(  
 
-        title="Teste de Reações",   #titulo da box
-        description="Teste a Reação abaixo", #descricao da box
+        title="Teste de Reações",  #titulo da box
+        description="Teste a Reação abaixo",  #descricao da box
         color= discord.Colour.purple()  #cor da barra lateral
 
     ) #embed ele permite a edicao da box de mensagem
@@ -68,10 +69,14 @@ async def on_raw_reaction_add(payload):
 #################################################################### - [ Lista de Comandos abaixo] - ############################################################################
 #################################################################################################################################################################################
 
-@client.command() #melhorar
-async def comandos(ctx):
-    comandos = '!teste','!cafe','!ola'
-    await ctx.send(f'Lista de comandos:\n{comandos}')
+@client.command()
+async def help(ctx):
+    embed = discord.Embed(
+        title= 'Lista de Comandos:',
+        description= '!teste 🚀\n !cafe ☕\n !ola 👋 \n !gatinho 😺 \n !d20 🎲 \n',
+        color= discord.Colour.red()       
+    )
+    await ctx.send(embed=embed)
 
 @client.command()
 async def d20(ctx):
@@ -101,6 +106,13 @@ async def motivacional(ctx):
 
 @client.command()
 async def gatinho(ctx):
-    pass
+    async with ctx.channel.typing():
+        async with aiohttp.ClientSession() as cs: #aiohttp.ClientSession() é -> cs
+            async with cs.get('http://aws.random.cat/meow') as request: #cs.get + URL é ->
+                data = await request.json()
 
+                embed = discord.Embed(title='🐱')
+                embed.set_image(url=data['file'])
+                await ctx.send(embed=embed)
+        
 client.run(token)
