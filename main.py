@@ -4,7 +4,6 @@ from TOKEN import token_oculto
 import aiohttp
 import discord
 import random
-import os
 
 token = token_oculto
 intents = discord.Intents.default()
@@ -21,7 +20,7 @@ async def on_ready():
 
 @client.event #trigger comunicação Discord X Bot
 async def on_member_join(member): 
-    await client.get_channel(839576746293723141).send(f'https://pbs.twimg.com/media/COfmjiqWsAQYk1f.jpg') 
+    await client.get_channel(839576746293723141).send(f'Seja bem vindo :) {member.mention}') 
 
     #função async - on_member_join (mostra uma mensagem de boas vindas para o usario recebendo o parametro do decorator)
     #await é a resposta que o async solicita neste caso apontando para o canal dando get_channel + ID, usando o parametro de membro como mensagem a ser enviada + usuario
@@ -33,8 +32,8 @@ async def on_member_remove(member):
     #função async - on_member_remove (mostra uma mensagem de adeus para o usario recebendo o parametro do decorator)
     #await é a resposta que o async solicita neste caso apontando para o canal dando get_channel + ID, usando o parametro de membro como mensagem a ser enviada + usuario
 
-@client.command(pass_context= True) #aqui livra do ctx pra mensagem só passar
-async def teste2(ctx): #async é o metodo a ser chamado esperando o contexto
+@client.command(pass_context= True) #pass_context = Não faço ideia do porque mas precisa estar como TRUE
+async def teste2(ctx): #comando criado que vai ser chamado com o prefixo >!<
     embed = discord.Embed(  
 
         title="Teste de Reações",  #titulo da box
@@ -43,25 +42,25 @@ async def teste2(ctx): #async é o metodo a ser chamado esperando o contexto
 
     ) #embed ele permite a edicao da box de mensagem
 
-    msg = await ctx.send(embed=embed)  #await é o que o bot responde
-    await msg.add_reaction('1️⃣')  #a mensagem com o simbolo a ser adicionado
-    await msg.add_reaction('2️⃣')  #a mensagem com o simbolo a ser adicionado
+    msg = await ctx.send(embed=embed)  #Await retorno da mensagem com a edição de embed
+    await msg.add_reaction('1️⃣')  #Mensagem com a react.
+    await msg.add_reaction('2️⃣')  #Mensagem com a react.
 
 @client.event
 async def on_raw_reaction_add(payload):
-    msg_fixada = payload.message_id    #atribuindo o payload a mensagem fixada
-    if msg_fixada == 841389681408737301:    #atribuindo o ID da msg marcada
-        guild_id = payload.guild_id    #variavel marcando guild_id -> payload.guild_id
-        guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)    #variavel marcando guild -> usando lambda func com guild_id/client.guild
-        member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)    #variavel marcando member -> usando lambda func com payload.user_id/guild.member
-        emoji = payload.emoji.name    #variavel usando emoji react em cima -> usando o payload
+    msg_fixada = payload.message_id    #Atribuindo msg_fixada ao método payload.message_id
+    if msg_fixada == 841478314848813056:    #Atribuindo msg_fixada ao ID da mensagem fixada no canal
+        guild_id = payload.guild_id    #Atribuindo guild_id ao método payload.guild_id
+        guild = discord.utils.find(lambda g: g.id == guild_id, client.guilds)    #Atribuindo a VAR guild aos métodos discord.utils.find com os seus parametros
+        member = discord.utils.find(lambda m: m.id == payload.user_id, guild.members)    #Atribuindo VAR member aos métodos discord.utils.find com os seus parametros
+        emoji = payload.emoji.name    #Atribuindo a VAR emoji aos métodos payload.emoji.name
 
-        if emoji == '1️⃣':
-            role = discord.utils.get(guild.roles, name= 'cargo1')
-            await member.add_roles(role)
-        elif emoji == '2️⃣':
-            role = discord.utils.get(guild.roles, name= 'cargo2')
-            await member.add_roles(role)
+        if emoji == '1️⃣':   #Utilizando a mensagem com embed aplicado esperando a reação [1]
+            role = discord.utils.get(guild.roles, name= 'cargo1') #VAR role aplicando os metodos do discord.utils.get(parametros de guild.role, name = nome do cargo)
+            await member.add_roles(role) #Await vai adicionar o membro na role de reação [1]
+        elif emoji == '2️⃣': #Utilizando a mensagem com embed aplicado esperando a reação [2]
+            role = discord.utils.get(guild.roles, name= 'cargo2') #VAR role aplicando os metodos do discord.utils.get(parametros de guild.role, name = nome do cargo)
+            await member.add_roles(role) #Await vai adicionar o membro na role de reação [2]
 
 # variaveis acima para definir roles
 
@@ -73,7 +72,7 @@ async def on_raw_reaction_add(payload):
 async def help(ctx):
     embed = discord.Embed(
         title= 'Lista de Comandos:',
-        description= '!teste 🚀\n !cafe ☕\n !ola 👋 \n !gatinho 😺 \n !d20 🎲 \n',
+        description= '!teste 🚀\n !cafe ☕\n !ola 👋 \n !gatinho 😺 \n !d20 🎲 \n !moeda 🕹️ \n',
         color= discord.Colour.red()       
     )
     await ctx.send(embed=embed)
@@ -93,16 +92,17 @@ async def cafe(ctx):
     await ctx.send('Pausa para o ☕')
 
 @client.command()
-async def ola(ctx):
-    await ctx.send(f'Ola seu corno :) tb te amo <3')
+async def bot(ctx):
+    await ctx.send(f'Posso ser um bot mas pelo menos não sou gado.')
 
 @client.command()
 async def moeda(ctx):
-    pass
+    flip = random.randint(1,2)
 
-@client.command()
-async def motivacional(ctx):
-    pass
+    if flip == 1:
+        await ctx.send(f'Deu 😶')
+    elif flip == 2:
+        await ctx.send(f'Deu 👑')
 
 @client.command()
 async def gatinho(ctx):
