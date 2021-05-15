@@ -10,7 +10,7 @@ Implementações:
 - ✔️ Criação de !comandos.
 - ✔️  Comandos responsivos para os usuarios.
 - [ ] Função de bot musical.
-- [ ] Hospedagem do Bot para uso externo.
+- ✔️  Hospedagem do Bot para uso externo.
 - [ ] Sugestões?
 
 
