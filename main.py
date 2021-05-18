@@ -1,4 +1,4 @@
-from TOKEN import token_oculto
+from TOKEN import token_oculto   ##Token upado separado.
 from discord.embeds import Embed
 from discord.ext import commands, tasks
 from discord import Intents, Colour
@@ -55,7 +55,7 @@ async def teste2(ctx):
     await msg.add_reaction('1️⃣')  
     await msg.add_reaction('2️⃣')  
 
-@client.event
+@client.event                                                           #Não vou usar isso agora.
 async def on_raw_reaction_add(payload):
     msg_fixada = payload.message_id    
     if msg_fixada == 841478314848813056:    
