@@ -5,13 +5,13 @@ Projeto para aplicação da API Discord.py
 Para o funcionamento correto do bot, é necessário gerar um TOKEN no toolkit do Discord, importante que tudo esteja na mesma pasta também.
 
 Implementações:
-- ✔️ Mensagem de Join/Leave no server do discord.
-- ✔️ Auto-Role.
-- ✔️ Criação de !comandos.
-- ✔️  Comandos responsivos para os usuarios.
+- ✔️ DM Automatica ao dar Join/Leave de um Servidor utilizando - on_member_join / on_member_leave
+- ✔️ Auto-Role clicando em mensagem utilizando - on_raw_reaction
+- ✔️ Criação de !comandos (Alguns estão sendo implementados aos poucos.
+- ✔️  Comandos responsivos para os usuarios utilizando - ctx + prefix em conjunto com a API discord.py
+- ✔️  Hospedagem do Bot para uso externo utilizando - DisCloud https://discloudbot.com
 - [ ] Função de bot musical.
-- ✔️  Hospedagem do Bot para uso externo.
-- [ ] Sugestões?
+
 
 
 Documentação Discord.py:
