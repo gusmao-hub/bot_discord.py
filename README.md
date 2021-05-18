@@ -1,8 +1,8 @@
 # bot_discord.py
 Projeto para aplicação da API Discord.py
 
-É necessário o TOKEN que pode ser gerado no toolkit do discord, tanto a main/TOKEN são necessárias na mesma pasta para funcionamento, todos os códigos são comentados para facilitar a leitura e se necessário replicar e implementar novos comandos.
 
+Para o funcionamento correto do bot, é necessário gerar um TOKEN no toolkit do Discord, importante que tudo esteja na mesma pasta também.
 
 Implementações:
 - ✔️ Mensagem de Join/Leave no server do discord.
@@ -19,4 +19,4 @@ https://discordpy.readthedocs.io/en/latest/index.html
 
 
 • O projeto é básico para aprendizado de utilização de API externa com um server que contenha text/voIP.
-
+• requirements.txt é necessário para hospedagem no DisCloud onde o bot está upado funcionando ONLINE.
