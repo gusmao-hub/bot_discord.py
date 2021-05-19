@@ -2,7 +2,7 @@
 Projeto para aplicação da API Discord.py
 
 
-Para o funcionamento correto do bot, é necessário gerar um TOKEN no toolkit do Discord, importante que tudo esteja na mesma pasta também.
+Para o funcionamento do bot, é necessário que o arquivo TOKEN gerado esteja na mesma pasta do arquivo main.py (Upload em sites de host também é necessário o arquivo TOKEN)
 
 Implementações:
 - ✔️ DM Automatica ao dar Join/Leave de um Servidor utilizando - on_member_join / on_member_leave
